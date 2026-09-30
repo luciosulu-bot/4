@@ -1,0 +1,336 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un pequeño mundo para ella 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-flower">🌸</div>
+    <h1>Un pequeño mundo para ella</h1>
+    <p>Preparando la aventura...</p>
+  </div>
+
+  <div id="intro">
+    <div class="intro-content">
+      <div class="intro-flower">🌸</div>
+      <p class="eyebrow">UNA AVENTURA HECHA ESPECIALMENTE PARA TI</p>
+      <h1>Bienvenida a tu<br><span>pequeño rincón</span> 🌸</h1>
+      <p class="intro-text">Un jardín de lirios, una pequeña isla y donde serás un pibble feliz.</p>
+      <button id="startBtn" class="glow-btn">Comenzar aventura ✨</button>
+      <p class="hint">Puedes mover la cámara con el mouse</p>
+    </div>
+  </div>
+
+  <canvas id="scene"></canvas>
+
+  <header id="navbar">
+    <div class="brand">🌸 Mi pequeño mundo</div>
+    <nav>
+      <button id="musicBtn" type="button">🎵 Escuchar música</button>
+      <button data-target="home">Inicio</button>
+      <button data-target="flowers">Lirios 🌸</button>
+      <button data-target="crew">One Piece 🏴‍☠️</button>
+      <button data-target="letter">Para ti 💌</button>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section id="home" class="panel active">
+      <div class="glass hero-card">
+        <p class="eyebrow">ISLA ROSA</p>
+        <h2>Bienvenida a tu pequeño rincón 🌸</h2>
+        <p>Este lugar fue creado para guardar flores, aventuras y un mensaje especial para ti.</p>
+        <div class="button-row">
+          <button class="pink-btn" data-target="flowers">Explorar los lirios</button>
+          <button class="ghost-btn" data-target="letter">Ver la carta 💌</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="flowers" class="panel">
+      <div class="glass section-card">
+        <p class="eyebrow">JARDÍN DE LIRIOS</p>
+        <h2>Pequeñas flores, grandes detalles 🌷</h2>
+        <p class="section-intro">Presiona cada lirio para abrir una pequeña carta. 🌸</p>
+        <div class="flower-grid">
+          <article class="flower-card accordion-card flower-accordion">
+            <button class="expand-toggle" type="button" aria-expanded="false">
+              <div class="flower-icon pink">🌸</div>
+              <div><h3>Lirio rosa</h3><p>Ternura y dulzura.</p></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="flower-details">
+              <div class="mini-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para el lirio rosa 🌸</h3>
+                <p>Como este lirio, hay detalles pequeños que terminan haciendo enorme un momento. Que nunca te falten motivos para sonreír y personas que te recuerden lo especial que eres.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flower-card accordion-card flower-accordion">
+            <button class="expand-toggle" type="button" aria-expanded="false">
+              <div class="flower-icon white">🤍</div>
+              <div><h3>Lirio blanco</h3><p>Tranquilidad y paz.</p></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="flower-details">
+              <div class="mini-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para el lirio blanco 🤍</h3>
+                <p>Ojalá este pequeño rincón siempre te recuerde que también mereces días tranquilos, abrazos sinceros y momentos en los que puedas simplemente ser tú.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="flower-card accordion-card flower-accordion">
+            <button class="expand-toggle" type="button" aria-expanded="false">
+              <div class="flower-icon rose">💗</div>
+              <div><h3>Lirio rosado</h3><p>Cariño y afecto.</p></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="flower-details">
+              <div class="mini-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para el lirio rosado 💗</h3>
+                <p>Que este color te recuerde todo el cariño que cabe en los detalles sencillos. Gracias por hacer que este pequeño mundo tenga un poquito más de color.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="crew" class="panel">
+      <div class="glass section-card wide crew-section">
+        <p class="eyebrow">GRAND LINE</p>
+        <h2>Tripulación favorita 🏴‍☠️</h2>
+        <p class="section-intro">Presiona cualquiera de los personajes para abrir su espacio y leer una pequeña carta especial. 💌</p>
+
+        <div class="crew-grid">
+          <article class="crew-card accordion-card">
+            <button class="crew-toggle" type="button" aria-expanded="false">
+              <div class="avatar"><img src="img/luffy.png" alt="Luffy"></div>
+              <div class="crew-title"><h3>Luffy</h3><span>Capitán con un gran sueño y un corazón enorme.</span></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="crew-details">
+              <img class="character-image" src="img/luffy.png" alt="Luffy">
+              <div class="mini-letter character-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para Luffy 🏴‍☠️</h3>
+                <p>Que nunca pierdas esa forma tan tuya de perseguir tus sueños y de hacer sonreír a quienes están contigo. Sigue navegando siempre hacia aquello que te hace feliz.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="crew-card accordion-card">
+            <button class="crew-toggle" type="button" aria-expanded="false">
+              <div class="avatar"><img src="img/zoro.png" alt="Zoro"></div>
+              <div class="crew-title"><h3>Zoro</h3><span>Espadachín decidido que nunca abandona su objetivo.</span></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="crew-details">
+              <img class="character-image" src="img/zoro.png" alt="Zoro">
+              <div class="mini-letter character-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para Zoro ⚔️</h3>
+                <p>Que cada camino difícil te recuerde lo fuerte que eres cuando decides no rendirte. Sigue avanzando con esa determinación que te hace único.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="crew-card accordion-card">
+            <button class="crew-toggle" type="button" aria-expanded="false">
+              <div class="avatar"><img src="img/nami.png" alt="Nami"></div>
+              <div class="crew-title"><h3>Nami</h3><span>Navegante brillante que conoce el camino.</span></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="crew-details">
+              <img class="character-image" src="img/nami.png" alt="Nami">
+              <div class="mini-letter character-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para Nami 🧭</h3>
+                <p>Que siempre encuentres el rumbo hacia los lugares y las personas que te hagan sentir feliz. Tu inteligencia y tu valentía hacen especial cada aventura.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="crew-card accordion-card">
+            <button class="crew-toggle" type="button" aria-expanded="false">
+              <div class="avatar"><img src="img/sanji.png" alt="Sanji"></div>
+              <div class="crew-title"><h3>Sanji</h3><span>Cocinero elegante y protector de su tripulación.</span></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="crew-details">
+              <img class="character-image" src="img/sanji.png" alt="Sanji">
+              <div class="mini-letter character-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para Sanji 🍳</h3>
+                <p>Que nunca te falte una razón para cuidar a quienes quieres y un buen momento para compartir. Tu corazón también es parte de lo que te hace especial.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="crew-card accordion-card">
+            <button class="crew-toggle" type="button" aria-expanded="false">
+              <div class="avatar"><img src="img/robin.png" alt="Robin"></div>
+              <div class="crew-title"><h3>Robin</h3><span>Inteligente, tranquila y llena de curiosidad.</span></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="crew-details">
+              <img class="character-image" src="img/robin.png" alt="Robin">
+              <div class="mini-letter character-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para Robin 📚</h3>
+                <p>Que siempre conserves esa curiosidad por descubrir cosas nuevas. Hay una belleza especial en las personas que observan, aprenden y siguen creciendo.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="crew-card accordion-card">
+            <button class="crew-toggle" type="button" aria-expanded="false">
+              <div class="avatar"><img src="img/chopper.png" alt="Chopper"></div>
+              <div class="crew-title"><h3>Chopper</h3><span>Un pequeño doctor con un gran corazón.</span></div>
+              <span class="accordion-arrow">⌄</span>
+            </button>
+            <div class="crew-details">
+              <img class="character-image" src="img/chopper.png" alt="Chopper">
+              <div class="mini-letter character-letter">
+                <div class="mini-letter-top">💌 Una pequeña carta</div>
+                <h3>Para Chopper 🩺</h3>
+                <p>Que nunca olvides lo valioso que es tu gran corazón. A veces los detalles más pequeños son los que consiguen alegrarle el día a alguien.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="letter" class="panel">
+      <div class="glass letter-card">
+        <p class="eyebrow">UN MENSAJE PARA TI</p>
+        <h2>Tienes una carta 💌</h2>
+
+        <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Abrir carta">
+          <div class="env-back"></div>
+          <div class="env-letter">
+            <h3>Para ti 🌸</h3>
+            <p>No sé ni cómo empezar, porque la verdad siempre he sido malísimo demostrando lo que siento, pero quiero que sepas que te quiero muchísimo y que, aunque a veces no sepa cómo demostrarlo, de verdad eres alguien muy especial para mí. ❤️</p>
+            <p>Si algún día me necesitas, quiero que sepas que aquí voy a estar para ti, en las buenas, en las malas y en todas esas veces en las que simplemente necesites a alguien. No hemos vivido tantísimas cosas juntos, pero las que hemos vivido las guardo con muchísimo cariño, y sinceramente quiero seguir viviendo un montón de momentos chidos contigo.</p>
+            <p>Gracias por estar, por ser tú y por dejarme compartir un pedacito de tu vida. Te quiero muchísimo, pibbleamiga. Y aunque probablemente nunca sepa decirlo de la mejor manera: TE QUIEROOOOOOO MUCHÍSIMO PIBBLEAMIGA. 💗</p>
+          </div>
+          <div class="env-front"></div>
+          <div class="seal">💗</div>
+        </div>
+        <p class="letter-hint">Haz clic en el sobre para abrir la carta</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="map" class="map-widget glass">
+    <span>🗺️</span>
+    <button data-target="flowers">🌸 Isla de los Lirios</button>
+    <span>→</span>
+    <button data-target="crew">🏴‍☠️ Grand Line</button>
+    <span>→</span>
+    <button data-target="letter">💗 Isla Rosa</button>
+  </div>
+
+  <div id="counter" class="glass">✨ Aventuras: <strong id="adventureCount">0</strong></div>
+  <div id="toast"></div>
+
+  <!-- Música: se controla directamente desde este index.html -->
+  <audio id="bgMusic" loop preload="auto" playsinline></audio>
+
+  <script>
+    // Música independiente del módulo principal. Esto hace que funcione
+    // incluso si el navegador bloquea el script type="module" al abrir index.html.
+    (() => {
+      const tracks = {
+        home: { file: 'audio/por-eso-vine.mp3', name: 'Por eso vine' },
+        flowers: { file: 'audio/reina-pepiada.mp3', name: 'Reina Pepiada' },
+        crew: { file: 'audio/me-tiene-mal.mp3', name: 'Me Tiene Mal' },
+        letter: { file: 'audio/her.mp3', name: 'Her' }
+      };
+
+      const audio = document.getElementById('bgMusic');
+      const musicBtn = document.getElementById('musicBtn');
+      const musicTrack = document.getElementById('musicTrack');
+      const startBtn = document.getElementById('startBtn');
+      let currentSection = 'home';
+      let userStartedMusic = false;
+
+      function loadTrack(section, play = false) {
+        currentSection = tracks[section] ? section : 'home';
+        const track = tracks[currentSection];
+        audio.pause();
+        audio.src = track.file;
+        audio.load();
+        musicTrack.textContent = track.name;
+        musicBtn.textContent = '🎵 Escuchar música';
+
+        if (play) {
+          const promise = audio.play();
+          if (promise) {
+            promise.then(() => {
+              userStartedMusic = true;
+              musicBtn.textContent = '⏸ Pausar música';
+            }).catch(() => {
+              musicBtn.textContent = '🎵 Escuchar música';
+            });
+          }
+        }
+      }
+
+      // Carga Inicio. El navegador exige una interacción del usuario
+      // antes de reproducir audio con sonido, por lo que el primer clic
+      // que habilita la música es "Comenzar aventura" o este botón.
+      loadTrack('home', false);
+
+      musicBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play().then(() => {
+            userStartedMusic = true;
+            musicBtn.textContent = '⏸ Pausar música';
+          }).catch(() => {
+            alert('No se pudo reproducir la música. Revisa que la carpeta audio esté junto a index.html.');
+          });
+        } else {
+          audio.pause();
+          musicBtn.textContent = '🎵 Escuchar música';
+        }
+      });
+
+      // Primer clic de la página: arranca Por eso vine.
+      startBtn.addEventListener('click', () => {
+        loadTrack('home', true);
+      });
+
+      // Al cambiar de sección, cambia automáticamente la canción
+      // si el usuario ya había iniciado la música.
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-target]');
+        if (!button) return;
+        const section = button.dataset.target;
+        if (!tracks[section]) return;
+        loadTrack(section, userStartedMusic);
+      });
+
+      audio.addEventListener('play', () => {
+        musicBtn.textContent = '⏸ Pausar música';
+      });
+      audio.addEventListener('pause', () => {
+        musicBtn.textContent = '🎵 Escuchar música';
+      });
+    })();
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
